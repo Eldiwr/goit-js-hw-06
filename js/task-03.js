@@ -21,9 +21,11 @@ const images = [
 // Все элементы галереи должны добавляться в DOM за одну операцию вставки.
 // Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.
 
-const gallery = document.querySelector('.gallery');
+const galleryList = document.querySelector('.gallery');
 
-const galleryList = images.map(({ url, alt }) => `<li class ="list"> <img src = '${url}' alt = '${alt}'> </li>`);
+const gallery = images.map(({ url, alt }) =>
+  `<li><img src=${url} alt=${alt} width = 400 height = 250></li>`
+);
 
-gallery.insertAdjacentHTML("beforebegin", galleryList);
+galleryList.insertAdjacentHTML('afterbegin', gallery);
 

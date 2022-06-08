@@ -14,21 +14,18 @@ const ingredients = [
 // Добавит элементу класс item.
 // После чего вставит все <li> за одну операцию в список ul.ingredients.
 
-const ingredientsList = document.querySelector('ul');
+const vegetablesList = document.querySelector("#ingredients")
 
+const vegetables = ingredients.map(element => {
 
-const elements = ingredients.map(value => {
+  const ingredient = document.createElement("li");
+  ingredient.textContent = element;
+  ingredient.classList.add('item');
 
-  const vegetables = document.createElement('li');
-
-  vegetables.textContent = value;
-  vegetables.classList.add('item');
-
-  return vegetables;
+  return ingredient;
 });
 
-ingredientsList.append(...elements);
-
+vegetablesList.append(...vegetables);
 
 
 
